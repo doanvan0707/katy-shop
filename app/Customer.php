@@ -20,4 +20,9 @@ class Customer extends Model
     {
     	return $this->hasMany('App\Bill');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

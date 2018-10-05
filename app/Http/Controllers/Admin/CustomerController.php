@@ -15,11 +15,14 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::paginate(5);
-        session(['succsess' => 'Lấy dữ liệu thành công từ database']);
+        // $tasks = Task::where(['user_id' => Auth::user()->id])->get();
+        // $customers = Customer::all();
+        // return response()->json([
+        //     'customers'    => $customers,
+        // ], 200);
+        $customers = Customer::all();
         return view('backend.customers.index', compact('customers'));
     }
-
     /**
      * Show the form for creating a new resource.
      *

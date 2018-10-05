@@ -1,0 +1,25 @@
+.content {
+	width: 600px;
+	margin: 0 auto;
+}
+.cart-content {
+	background: #fff;
+	padding: 10px;
+}
+sup {
+	color: red;
+}
+.cart-content img {
+	width: 70%;
+    border: solid 1px #f1f1f1;
+}
+.cart-subtract,
+.cart-add {
+	border: solid 1px #f1f1f1;
+	padding: 0 8px;
+}
+span:after {
+	content: "*";
+	color: red;
+	font-weight: bold;
+}

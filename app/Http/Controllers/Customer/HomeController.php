@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Customer;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Slide;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -13,10 +15,22 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('frontend.index');
+    {   
+        $slides = Slide::all();
+        $productNews = Product::where('new',1)->get();
+        $productNews = Product::paginate(8);
+        return view('frontend.index', compact('slides', 'productNews'));
     }
 
+    public function shopping()
+    {
+        return view('frontend.shopping_cart');
+    }
+
+    public function checkout()
+    {
+        return view('frontend.checkout');
+    }
     /**
      * Show the form for creating a new resource.
      *
